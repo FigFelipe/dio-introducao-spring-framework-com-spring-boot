@@ -3,7 +3,7 @@ package dio.aula_spring_data_jpa.model;
 import jakarta.persistence.*;
 
 @Entity
-public class User {
+public class Usuario {
 
     // Atributos
     @Id
@@ -12,7 +12,7 @@ public class User {
     private Integer id;
 
     @Column(length = 50, nullable = false)
-    private String nome;
+    private String name;
 
     @Column(length = 20, nullable = false)
     private String username;
@@ -21,12 +21,12 @@ public class User {
     private String password;
 
     // GETTER e SETTER
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getUsername() {
@@ -50,7 +50,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", nome='" + nome + '\'' +
+                ", nome='" + name + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';
