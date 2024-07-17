@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class StartApp implements CommandLineRunner {
 
@@ -15,6 +17,25 @@ public class StartApp implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+
+        // Consultando objeto através do Query Override
+        //List<Usuario> usuarios = repository.filtrarPorNome("Felipe");
+
+        // Consultando objeto através do 'findByNameContaining'
+        List<Usuario> usuarios = repository.findByNameContaining("Teste");
+
+        if(!usuarios.isEmpty()){
+            for(Usuario u : usuarios){
+                System.out.println(u);
+            }
+        }
+
+        // Consultando objeto através do 'findByUsername'
+        System.out.println(repository.findByUsername("test"));
+
+    }
+
+    private void insertUser(){
 
         // Criando um novo usuario
         Usuario usuario = new Usuario();
