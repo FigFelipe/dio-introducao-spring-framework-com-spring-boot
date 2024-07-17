@@ -3,6 +3,7 @@ package dio.aula_spring_data_jpa.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "tabelateste")
 public class Usuario {
 
     // Atributos
